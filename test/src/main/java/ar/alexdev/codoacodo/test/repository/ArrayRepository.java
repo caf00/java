@@ -1,4 +1,4 @@
-package ar.alexdev.codoacodo.test.data;
+package ar.alexdev.codoacodo.test.repository;
 
 import java.util.List;
 import ar.alexdev.codoacodo.test.domain.Book;
