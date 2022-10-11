@@ -1,10 +1,9 @@
 package idiomReport.usecase;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
+
 import idiomReport.domain.Person;
 import idiomReport.domain.PersonRepository;
 
@@ -23,23 +22,9 @@ public class SortPeopleByIdiomUseCaseImpl implements SortPeopleByIdiomUseCase {
 
     @Override
     public Map<String, List<Person>> execute() {
-        List<Person> people = personRepository.getAllData();
-        String languaje = "";
-        Map<String, List<Person>> map = new HashMap<>();
-        for (Person person : people) {
-            if (!Objects.equals(languaje, person.getIdiom())) {
-                languaje = person.getIdiom();
-                map.put(languaje, generatePeopleSet(languaje, people));
-            }
-        }
-        return map;
+        return personRepository
+            .getAllData()
+            .stream()
+            .collect(Collectors.groupingBy(Person::getIdiom));
     }
-
-    private List<Person> generatePeopleSet(String languaje, List<Person> people) {
-        return people
-                .stream()
-                .filter(p -> Objects.equals(p.getIdiom(), languaje))
-                .collect(Collectors.toList());
-    }
-
 }
