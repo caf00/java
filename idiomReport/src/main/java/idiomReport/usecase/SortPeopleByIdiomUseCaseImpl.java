@@ -17,7 +17,7 @@ public class SortPeopleByIdiomUseCaseImpl implements SortPeopleByIdiomUseCase {
         this.personRepository = personRepository;
     }
 
-    public static SortPeopleByIdiomUseCaseImpl newSortPeopleByIdiomUseCaseImpl(PersonRepository personRepository) {
+    public static SortPeopleByIdiomUseCaseImpl newInstance(PersonRepository personRepository) {
         return new SortPeopleByIdiomUseCaseImpl(personRepository);
     }
 

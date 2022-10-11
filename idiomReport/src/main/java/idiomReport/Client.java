@@ -13,7 +13,7 @@ public class Client {
         this.sortPeopleByIdiomUseCase = sortPeopleByIdiomUseCase;
     }
 
-    public static Client newClient(SortPeopleByIdiomUseCase sortPeopleByIdiomUseCase) {
+    public static Client newInstance(SortPeopleByIdiomUseCase sortPeopleByIdiomUseCase) {
         return new Client(sortPeopleByIdiomUseCase);
     }
 

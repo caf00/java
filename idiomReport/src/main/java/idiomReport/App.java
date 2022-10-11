@@ -11,9 +11,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        Client client = Client.newClient(
-            SortPeopleByIdiomUseCaseImpl.newSortPeopleByIdiomUseCaseImpl(
-                PersonRepositoryImpl.newDataRepository()
+        Client client = Client.newInstance(
+            SortPeopleByIdiomUseCaseImpl.newInstance(
+                PersonRepositoryImpl.newInstance()
             )
         );
         client.report();

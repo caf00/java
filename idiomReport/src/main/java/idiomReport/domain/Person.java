@@ -11,7 +11,7 @@ public class Person {
         this.name = name;
     }
 
-    public static Person newPerson(String idiom, String name) {
+    public static Person newInstance(String idiom, String name) {
         return new Person(idiom, name);
     }
 
